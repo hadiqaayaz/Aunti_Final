@@ -8,8 +8,11 @@ A pixel-perfect, fully functional directory for finding doulas. Built with Next.
 npm install
 npm run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000).
+Live Demo
+https://aunti-final.vercel.app/
+GitHub Repository
+https://github.com/hadiqaayaz/Aunti_Fina
+host: [http://localhost:3000](http://localhost:3000).
 
 ## Folder Structure
 
