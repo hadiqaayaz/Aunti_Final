@@ -52,6 +52,8 @@ public/assets/
 
 ## Tradeoff: Server Component for Directory Page vs. Full Client
 
-The `app/directory/page.tsx` is a **server component** that reads `searchParams` at request time and passes initial filter values to the `DirectoryPageClient` component. This means the first render is SSR with the correct filters already applied — no flash of wrong state, and search-engine crawlers see real content.
+I used app/directory/page.tsx as a Server Component that reads searchParams and passes the initial filter values to DirectoryPageClient. This ensures the first page load is server-rendered with the correct filters already applied, which improves SEO and avoids showing incorrect results before the page updates.
 
-The tradeoff: filter interactions after the initial load are handled client-side via `useState` in `DirectoryPageClient`, which re-fetches from `/api/listings` on change. This means the URL doesn't update as users adjust filters in the sidebar (unlike a fully URL-driven approach with `router.push`). The choice prioritises simplicity and avoids double-fetching on every keystroke, at the cost of shareable filter URLs after interaction.
+After the initial render, filter changes are handled on the client using useState, which fetches updated listings from /api/listings without reloading the page. This keeps filter interactions fast and the implementation simple.
+
+The tradeoff is that the URL does not update when filters change, so users cannot share or bookmark the current filtered state after interacting with the page. I chose this approach because it avoids the added complexity and unnecessary requests that can occur when updating the URL on every filter change.
