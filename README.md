@@ -11,8 +11,7 @@ npm run dev
 Live Demo
 https://aunti-final.vercel.app/
 GitHub Repository
-https://github.com/hadiqaayaz/Aunti_Fina
-host: [http://localhost:3000](http://localhost:3000).
+https://github.com/hadiqaayaz/Aunti_Final
 
 ## Folder Structure
 
